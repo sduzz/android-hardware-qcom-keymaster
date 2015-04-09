@@ -33,9 +33,11 @@ LOCAL_SHARED_LIBRARIES := \
         libc \
         libdl
 
+ifeq ($(TARGET_PREBUILT_KERNEL,KERNEL_BIN),false)
 LOCAL_ADDITIONAL_DEPENDENCIES := \
     $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr \
     $(LOCAL_PATH)/Android.mk
+endif
 
 LOCAL_MODULE_TAGS := optional
 
